@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+#   Character.create(name: "Luke", movie: movies.first)
+require "faker"
+
+puts "Cleaning database..."
+Movie.destroy_all
+
+puts "Creating movies..."
+
+10.times do
+
+  Movie.create(
+    title: Faker::Movie.title,
+    overview: Faker::Movie.quote,
+    poster_url: Faker::LoremFlickr.image,
+    rating:Faker::Number.decimal
+  )
+end
