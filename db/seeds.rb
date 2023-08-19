@@ -13,7 +13,7 @@ Movie.destroy_all
 
 puts "Creating movies..."
 
-10.times do
+50.times do
 
   Movie.create(
     title: Faker::Movie.title,
